@@ -1,6 +1,7 @@
 :root {
     /* Primary Colors */
     --cyan: hsl(179, 62%, 43%);
+    --light-cyan: hsl(179, 62%, 47%);
     --bright-yellow: hsl(71, 73%, 54%);
 
     /* Neutral Colors */
@@ -24,11 +25,138 @@
 body {
     font-family: var(--ff-base);
     font-weight: var(--fw-regular);
+    color: var(--white);
     background-color: var(--light-gray);
+    padding: 32px;
 
     display: grid;
     place-content: center;
     min-height: 100vh;
+}
+
+.card {
+    --card-max-width: 635px;
+    --section-max-width: calc(var(--card-max-width) / 2);
+
+    --head-padding-top: 28px;
+    --head-padding-bottom: 32px;
+    --head-padding-left-right: 24px;
+    --section-padding: 24px;
+
+    --head-space-bottom-title: 24px;
+    --head-space-bottom-subtitle: 18px;
+    --section-space-bottom-title: 18px;
+    --section-space-bottom-text: 26px;
+
+    --head-fs-title: 1.225rem;
+    --head-fs-subtitle: 0.913rem;
+    --head-fs-text: 0.856rem;
+
+    --section-fs-title: 1.1rem;
+    --section-fs-text: 0.978rem;
+    --section-fs-text-sm: 0.856rem;
+
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0px 12px 16px 2px hsla(179, 62%, 43%, 0.16);
+    max-width: var(--card-max-width);
+    display: grid;
+    grid-template-areas:
+        "head"
+        "sub"
+        "why";
+    grid-template-columns: minmax(min-content, var(--section-max-width));
+}
+
+/* HEADER */
+.card-head {
+    grid-area: head;
+    background-color: var(--white);
+    padding: var(--head-padding-top) var(--head-padding-left-right) var(--head-padding-bottom);
+}
+
+.head-title {
+    font-weight: var(--fw-bold);
+    color: var(--cyan);
+    font-size: var(--head-fs-title);
+    margin-block-end: var(--head-space-bottom-title);
+}
+
+.head-subtitle {
+    font-weight: var(--fw-bold);
+    color: var(--bright-yellow);
+    font-size: var(--head-fs-subtitle);
+    line-height: 1.36em;
+    margin-block-end: var(--head-space-bottom-subtitle);
+}
+
+.head-text {
+    color: var(--grayish-blue);
+    font-size: var(--head-fs-text);
+    line-height: 1.88em;
+}
+
+/* SECTIONS */
+.card-section {
+    padding: var(--section-padding);
+}
+
+.section-title {
+    font-weight: var(--fw-bold);
+    font-size: var(--section-fs-title);
+    margin-bottom: var(--section-space-bottom-title);
+}
+
+.subscription-section {
+    grid-area: sub;
+    background-color: var(--cyan);
+}
+
+.price-container {
+    display: flex;
+    align-items: center;
+    column-gap: 0.75rem;
+    margin-block-end: 4px;
+}
+
+.price {
+    font-weight: var(--fw-bold);
+    font-size: 2rem;
+}
+
+.pay-basis {
+    font-size: var(--section-fs-text);
+    line-height: 1.6em;
+}
+
+.section-text {
+    font-size: var(--section-fs-text);
+    line-height: 1.6em;
+    margin-bottom: var(--section-space-bottom-text);
+}
+
+.button {
+    font-weight: var(--fw-bold);
+    color: var(--white);
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--bright-yellow);
+    border-radius: 4px;
+    padding: 0.922em 0;
+    display: inline-block;
+    width: 100%;
+    box-shadow: 0px 12px 16px 2px hsla(0, 0%, 0%, 0.15);
+}
+
+.why-section {
+    grid-area: why;
+    background-color: var(--light-cyan);
+}
+
+.why-list {
+    list-style-type: none;
+    font-size: var(--section-fs-text-sm);
+    line-height: 1.46em;
 }
 
 /* FOOTER */
