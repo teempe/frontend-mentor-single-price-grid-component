@@ -160,13 +160,11 @@ body {
 }
 
 /* FOOTER */
-footer {
-    display: none;
-}
-
 .attribution { 
     font-size: 11px; 
-    text-align: center; 
+    text-align: center;
+    color: var(--grayish-blue);
+    margin-top: 32px;
 }
 
 .attribution a { 
