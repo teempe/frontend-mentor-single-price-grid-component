@@ -172,3 +172,31 @@ footer {
 .attribution a { 
     color: hsl(228, 45%, 44%); 
 }
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 635px) {
+    .card {
+        grid-template-areas: 
+            "head head"
+            "sub why";
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .card {
+        --head-space-bottom-subtitle: 11px;
+        --head-padding-top: 40px;
+        --head-padding-bottom: 40px;
+        --head-padding-left-right: 40px;
+        --section-padding: 40px;
+
+        --head-fs-title: 1.475rem;
+        --head-fs-subtitle: 1.1rem;
+        --head-fs-text: 0.978rem;
+    }
+    
+    .head-text {
+        line-height: 1.6em;
+    }
+}
